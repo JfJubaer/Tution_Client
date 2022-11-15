@@ -15,7 +15,7 @@ const Login = () => {
                 </p>
 
                 <form action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
-                    <p className="text-lg font-medium">Sign in to your account</p>
+                    <p className="text-lg font-medium">Login in to your account</p>
 
                     <div>
                         <label for="email" className="text-sm font-medium">Email</label>
@@ -87,12 +87,12 @@ const Login = () => {
                         type="submit"
                         className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
                     >
-                        Sign in
+                        Login
                     </button>
 
                     <p className="text-center text-sm text-gray-500">
                         No account?
-                        <Link className="underline" to='/enroll'>Sign up</Link>
+                        <Link className="underline" to='/enroll'> Sign up</Link>
                     </p>
                 </form>
             </div>
