@@ -87,7 +87,7 @@ const NavBar = () => {
               <div className="sm:flex sm:gap-4">
                 <Link
                   className="rounded-md bg-teal-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                  href="/"
+                  to='/login'
                 >
                   Login
                 </Link>
@@ -95,9 +95,9 @@ const NavBar = () => {
                 <div className="hidden sm:flex">
                   <Link
                     className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-teal-600"
-                    href="/"
+                    to='/enroll'
                   >
-                    Register
+                    Enroll
                   </Link>
                 </div>
               </div>
