@@ -8,9 +8,9 @@ const NavBar = () => {
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
         <div className="flex h-16 items-center justify-between">
           <div className="md:flex md:items-center md:gap-12">
-            <Link className="flex items-center mr-5 text-teal-600" to="/">
-              <img src={img1} className='w-24'  alt='' />
-              <h2 className='text-xl ml-5'>Tution-Point</h2>
+            <Link className="flex items-center mr-5 text-indigo-600" to="/">
+              <img src={img1} className='w-14' alt='' />
+              <h2 className='text-3xl ml-5 font-mono font-extrabold'>Tution-Point</h2>
             </Link>
           </div>
 
