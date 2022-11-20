@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/images/depositphotos_63590137-stock-illustration-blue-book-logo-vector.jpg'
 
 const NavBar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   return (
     <header aria-label="Site Header" className="bg-white shadow-xl">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -26,28 +27,13 @@ const NavBar = () => {
                   </Link>
                 </li>
 
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    Careers
-                  </Link>
-                </li>
+            
+
 
                 <li>
                   <Link
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
-                  >
-                    History
-                  </Link>
-                </li>
-
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    to="/services"
                   >
                     Services
                   </Link>
@@ -65,7 +51,7 @@ const NavBar = () => {
                 <li>
                   <Link
                     className="text-gray-500 transition hover:text-gray-500/75"
-                    href="/"
+                    to="/blogs"
                   >
                     Blog
                   </Link>
@@ -95,6 +81,7 @@ const NavBar = () => {
 
             <div className="block md:hidden">
               <button
+               onClick={() => setIsMenuOpen(true)}
                 className="rounded bg-gray-100 p-2 text-gray-600 transition hover:text-gray-600/75"
               >
                 <svg
@@ -112,6 +99,127 @@ const NavBar = () => {
                   />
                 </svg>
               </button>
+              {isMenuOpen && (
+              <div class='absolute z-20 top-0 left-0 w-full'>
+                <div class='p-5 bg-white border rounded shadow-sm'>
+                  <div class='flex items-center justify-between mb-4'>
+                    <div>
+                      <a
+                        href='/'
+                       
+                        class='inline-flex items-center'>
+                        <img
+                          className='w-10 h-15'
+                          src={img1}
+                          alt='tution'
+                        />
+                        <span class='ml-2 text-xl font-bold tracking-wide text-gray-800 uppercase'>
+                          Tuition-Point
+                        </span>
+                      </a>
+                    </div>
+                    <div>
+                      <button
+                        aria-label='Close Menu'
+                        title='Close Menu'
+                        class='p-2 -mt-2 -mr-2 transition duration-200 rounded hover:bg-gray-200 focus:bg-gray-200 focus:outline-none focus:shadow-outline'
+                        onClick={() => setIsMenuOpen(false)}>
+                        <svg class='w-5 text-gray-600' viewBox='0 0 24 24'>
+                          <path
+                            fill='currentColor'
+                            d='M19.7,4.3c-0.4-0.4-1-0.4-1.4,0L12,10.6L5.7,4.3c-0.4-0.4-1-0.4-1.4,0s-0.4,1,0,1.4l6.3,6.3l-6.3,6.3 c-0.4,0.4-0.4,1,0,1.4C4.5,19.9,4.7,20,5,20s0.5-0.1,0.7-0.3l6.3-6.3l6.3,6.3c0.2,0.2,0.5,0.3,0.7,0.3s0.5-0.1,0.7-0.3 c0.4-0.4,0.4-1,0-1.4L13.4,12l6.3-6.3C20.1,5.3,20.1,4.7,19.7,4.3z'
+                          />
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                  <nav>
+                    <ul class='space-y-4'>
+                      <li>
+                        <Link
+                          to='/'
+                          aria-label='Our product'
+                          title='Home'
+                          class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                          Home
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to='/services'
+                          aria-label='Our product'
+                          title='Home'
+                          class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                          Services
+                        </Link>
+                      </li>
+                      <li>
+                        <Link
+                          to='/blogs'
+                          aria-label='Our product'
+                          title='Home'
+                          class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                          Blog
+                        </Link>
+                      </li>
+
+                      {/* {user ? (
+                        <>
+                          <li>
+                            <Link
+                              to='/myreviews'
+                              aria-label='My Reviews'
+                              title='My Reviews'
+                              class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                              My Reviews
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to='/addservices'
+                              aria-label='add services'
+                              title='Add Services'
+                              class='font-medium tracking-wide text-gray-700 transition-colors duration-200 hover:text-deep-purple-accent-400'>
+                              Add Services
+                            </Link>
+                          </li>{" "}
+                          <Link
+                            // onClick={handleLogout}
+                            to='/'
+                            class='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide bg-black text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
+                            aria-label='Log out'
+                            title='Log out'>
+                            Log out
+                          </Link>
+                        </>
+                      ) : (
+                        <>
+                          {" "}
+                          <li>
+                            <Link
+                              to='/signup'
+                              class='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide  transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
+                              aria-label='Sign up'
+                              title='Sign up'>
+                              Sign up
+                            </Link>
+                          </li>
+                          <li>
+                            <Link
+                              to='/signin'
+                              class='inline-flex items-center justify-center w-full h-12 px-6 font-medium tracking-wide bg-black text-white transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
+                              aria-label='Sign in'
+                              title='Sign in'>
+                              Sign in
+                            </Link>
+                          </li>
+                        </>
+                      )} */}
+                    </ul>
+                  </nav>
+                </div>
+              </div>
+            )}
             </div>
           </div>
         </div>

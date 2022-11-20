@@ -1,9 +1,68 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
-import useTitle from '../../Title/useTitle';
+import { getAuth, updateProfile } from "firebase/auth";
+import React, { useContext } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { AuthContext } from "../../Context/AuthProvider";
+import app from "../../Firebase/firebase.config";
+import useTitle from "../../Title/useTitle";
+
+
+
 
 const Enroll = () => {
     useTitle('Enroll');
+    const auth = getAuth(app);
+    const navigate = useNavigate();
+    const location = useLocation();
+    const from = location.state?.from?.pathname || "/";
+    const {  userSignUp } = useContext(AuthContext);
+
+    const handleSignUp = (event) => {
+        event.preventDefault();
+        const form = event.target;
+        const name = form.name.value;
+        const email = form.email.value;
+        const photoURL = form.photoURL.value;
+        const password = form.password.value;
+        console.log(name, email, password);
+    
+        
+          userSignUp(email, password)
+            .then((result) => {
+              const user = result.user;
+              console.log(user);
+              updateProfile(auth.currentUser, {
+                displayName: name,
+                photoURL: photoURL,
+              })
+                .then((result) => {
+                  const user = result.user;
+                  const currentUser = {
+                    email: user.email,
+                  };
+                  fetch("http://localhost:5000/jwt", {
+                    method: "POST",
+                    headers: {
+                      "content-type": "application/json",
+                    },
+    
+                    body: JSON.stringify(currentUser),
+                  })
+                    .then((res) => res.json())
+                    .then((data) => {
+                      console.log(data);
+    
+                      localStorage.setItem("jwt-token", data.token);
+    
+                      navigate(from, { replace: true });
+                    });
+                  console.log(user);
+                })
+                .catch((error) => console.log(error));
+              navigate(from, { replace: true });
+            })
+            .catch((error) => console.log(error));
+       
+      };
     return (
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg">
@@ -11,14 +70,44 @@ const Enroll = () => {
                     Get started today
                 </h1>
 
-                <p className="mx-auto mt-4 max-w-md text-center text-gray-500">
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati sunt
-                    dolores deleniti inventore quaerat mollitia?
-                </p>
-
-                <form action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+                <form onSubmit={handleSignUp} action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
                     <p className="text-lg font-medium">Enroll now!!!</p>
 
+                    <div>
+                        <label for="email" className="text-sm font-medium">Name</label>
+
+                        <div className="relative mt-1">
+                            <input
+                                type="text"
+                                id="email"
+                                name="name"
+                                className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                placeholder="Enter Name"
+                            />
+
+                            <span className="absolute inset-y-0 right-4 inline-flex items-center">
+                          
+                            </span>
+                        </div>
+                    </div>
+                    <div>
+                        <label for="email" className="text-sm font-medium">Photo URL</label>
+
+                        <div className="relative mt-1">
+                            <input
+                                type="text"
+                                id="email"
+                                name="photoURL"
+                                className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                placeholder="Enter Photo URL"
+                            />
+
+                            <span className="absolute inset-y-0 right-4 inline-flex items-center">
+                            
+                                   
+                            </span>
+                        </div>
+                    </div>
                     <div>
                         <label for="email" className="text-sm font-medium">Email</label>
 
