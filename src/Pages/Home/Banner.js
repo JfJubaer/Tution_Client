@@ -4,9 +4,9 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
 
     return (
-        <section class="bg-gray-900 text-whit ">
+        <section class="bg-gray-900 text-white h-96">
             <div
-                class="mx-auto max-w-screen-xl px-4 py-32 h-40 lg:flex lg:h-80 lg:items-center"
+                class="mx-auto max-w-screen-xl px-4 py-32 lg:flex h-80 lg:items-center"
             >
                 <div class="mx-auto max-w-3xl text-center">
                     <h1
@@ -19,7 +19,7 @@ const Banner = () => {
 
 
 
-                    <div class="mt-8 flex flex-wrap justify-center gap-4">
+                    <div class="mt-8 flex  justify-center gap-4">
                         <Link
                             class="block w-full rounded border border-blue-600 bg-blue-600 px-12 py-3 text-sm font-medium text-white hover:bg-transparent hover:text-white focus:outline-none focus:ring active:text-opacity-75 sm:w-auto"
                             to="/services"

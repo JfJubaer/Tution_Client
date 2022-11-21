@@ -11,7 +11,7 @@ const Home = () => {
     useTitle('Home');
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch(`fake.json`)
+        fetch(`http://localhost:5000/services`)
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])

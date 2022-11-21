@@ -19,7 +19,7 @@ const Bio = () => {
                     <div class="lg:py-24">
                         <h2 class="text-3xl font-bold sm:text-4xl">
                             Our Honorable Teacher : <br />
-                            Ratul Vai
+                            Ratul Master
                         </h2>
 
                         <p class="mt-4 text-gray-600">
