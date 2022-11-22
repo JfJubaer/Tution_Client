@@ -1,17 +1,24 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { FaStar } from 'react-icons/fa';
+import { PhotoProvider, PhotoView } from 'react-photo-view';
 
 const Service = ({ course }) => {
     const { _id, title, price, details, Ratings, image } = course;
 
     return (
         <div class="block rounded-lg p-4 shadow-xl">
-            <img
-                alt="Home"
-                src={image}
-                class="h-56 w-full rounded-md object-cover"
-            />
+            <PhotoProvider>
+                <PhotoView
+                    src={image}
+                >
+                    <img
+                        alt="Home"
+                        src={image}
+                        class="h-56 w-full rounded-md object-cover"
+                    />
+                </PhotoView>
+            </PhotoProvider>
 
             <div class="mt-2">
                 <dl>

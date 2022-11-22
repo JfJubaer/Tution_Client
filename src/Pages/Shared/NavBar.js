@@ -1,9 +1,19 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
+import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/images/depositphotos_63590137-stock-illustration-blue-book-logo-vector.jpg'
+import { AuthContext } from '../../Context/AuthProvider';
 
 const NavBar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const { user, logOut } = useContext(AuthContext);
+  const handleLogout = () => {
+    console.log('out');
+    logOut()
+      .then(() => { })
+      .catch(() => { });
+    toast.error("User logged out");
+  };
   return (
     <header aria-label="Site Header" className="bg-white shadow-xl">
       <div className="mx-auto max-w-screen-xl px-4 sm:px-6 lg:px-8">
@@ -39,23 +49,27 @@ const NavBar = () => {
                   </Link>
                 </li>
 
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    to='/adservice'
-                  >
-                    Add service
-                  </Link>
-                </li>
+                {user
+                  &&
+                  <>
+                    <li>
+                      <Link
+                        className="text-gray-500 transition hover:text-gray-500/75"
+                        to='/adservice'
+                      >
+                        Add service
+                      </Link>
+                    </li>
 
-                <li>
-                  <Link
-                    className="text-gray-500 transition hover:text-gray-500/75"
-                    to='/reviews'
-                  >
-                    My Reviews
-                  </Link>
-                </li>
+                    <li>
+                      <Link
+                        className="text-gray-500 transition hover:text-gray-500/75"
+                        to='/myreviews'
+                      >
+                        My Reviews
+                      </Link>
+                    </li>
+                  </>}
 
                 <li>
                   <Link
@@ -70,23 +84,42 @@ const NavBar = () => {
           </div>
 
           <div className="flex items-center gap-4">
-            <div className="sm:flex sm:gap-4">
-              <Link
-                className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white shadow"
-                to='/login'
-              >
-                Login
-              </Link>
+            {
+              user ?
+                <>
+                  <div>
+                    <button
+                      onClick={handleLogout}
+                      class='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
+                      aria-label='Log out'
+                      title='Log out'>
+                      Log out
+                    </button>
+                  </div>
+                  <div>
 
-              <div className="hidden sm:flex">
-                <Link
-                  className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-indigo-600"
-                  to='/enroll'
-                >
-                  Enroll
-                </Link>
-              </div>
-            </div>
+                  </div>
+                </>
+                :
+                <div className="sm:flex sm:gap-4">
+                  <Link
+                    className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                    to='/login'
+                  >
+                    Login
+                  </Link>
+
+                  <div className="hidden sm:flex">
+                    <Link
+                      className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-indigo-600"
+                      to='/enroll'
+                    >
+                      Enroll
+                    </Link>
+                  </div>
+                </div>
+            }
+
 
             <div className="block md:hidden">
               <button
@@ -165,23 +198,27 @@ const NavBar = () => {
                           </Link>
                         </li>
 
-                        <li>
-                          <Link
-                            className="text-gray-500 transition hover:text-gray-500/75"
-                            to='/adservice'
-                          >
-                            Add service
-                          </Link>
-                        </li>
+                        {user
+                          &&
+                          <>
+                            <li>
+                              <Link
+                                className="text-gray-500 transition hover:text-gray-500/75"
+                                to='/adservice'
+                              >
+                                Add service
+                              </Link>
+                            </li>
 
-                        <li>
-                          <Link
-                            className="text-gray-500 transition hover:text-gray-500/75"
-                            to='/reviews'
-                          >
-                            My Reviews
-                          </Link>
-                        </li>
+                            <li>
+                              <Link
+                                className="text-gray-500 transition hover:text-gray-500/75"
+                                to='/myreviews'
+                              >
+                                My Reviews
+                              </Link>
+                            </li>
+                          </>}
 
                         <li>
                           <Link
@@ -192,6 +229,43 @@ const NavBar = () => {
                           </Link>
                         </li>
                       </ul>
+                      <br />
+                      {
+                        user ?
+                          <>
+                            <div>
+                              <Link
+                                onClick={handleLogout}
+                                to='/'
+                                class='inline-flex items-center justify-center h-12 px-6 font-medium tracking-wide text-black transition duration-200 rounded shadow-md bg-deep-purple-accent-400 hover:bg-deep-purple-accent-700 focus:shadow-outline focus:outline-none'
+                                aria-label='Log out'
+                                title='Log out'>
+                                Log out
+                              </Link>
+                            </div>
+                            <div>
+
+                            </div>
+                          </>
+                          :
+                          <div className="sm:flex sm:gap-4">
+                            <Link
+                              className="rounded-md bg-indigo-600 px-5 py-2.5 text-sm font-medium text-white shadow"
+                              to='/login'
+                            >
+                              Login
+                            </Link>
+
+                            <div className="hidden sm:flex">
+                              <Link
+                                className="rounded-md bg-gray-100 px-5 py-2.5 text-sm font-medium text-indigo-600"
+                                to='/enroll'
+                              >
+                                Enroll
+                              </Link>
+                            </div>
+                          </div>
+                      }
                     </nav>
                   </div>
                 </div>

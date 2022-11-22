@@ -19,7 +19,7 @@ const Home = () => {
         <div >
             <Banner></Banner>
             <div className='grid lg:grid-cols-3 container mx-auto gap-10 my-20'>
-                {courses.slice(0, 3).map((course, i) =>
+                {courses?.slice(0, 3).map((course, i) =>
                     <Service
                         course={course}
                         key={i}

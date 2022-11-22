@@ -1,8 +1,9 @@
-import { getAuth, updateProfile } from "firebase/auth";
-import React, { useContext } from "react";
-import { Link, useLocation, useNavigate } from "react-router-dom";
+
+import { useContext } from "react";
+import toast from "react-hot-toast";
+import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
-import app from "../../Firebase/firebase.config";
+
 import useTitle from "../../Title/useTitle";
 
 
@@ -10,59 +11,45 @@ import useTitle from "../../Title/useTitle";
 
 const Enroll = () => {
     useTitle('Enroll');
-    const auth = getAuth(app);
-    const navigate = useNavigate();
-    const location = useLocation();
-    const from = location.state?.from?.pathname || "/";
-    const {  userSignUp } = useContext(AuthContext);
 
-    const handleSignUp = (event) => {
+    const { createUser, updateUserProfile, } = useContext(AuthContext);
+    const navigate = useNavigate();
+
+
+
+
+    const handleRegister = (event) => {
         event.preventDefault();
+        console.log('clk')
         const form = event.target;
-        const name = form.name.value;
+
         const email = form.email.value;
+        const pass = form.pass.value;
+        const name = form.name.value;
         const photoURL = form.photoURL.value;
-        const password = form.password.value;
-        console.log(name, email, password);
-    
-        
-          userSignUp(email, password)
-            .then((result) => {
-              const user = result.user;
-              console.log(user);
-              updateProfile(auth.currentUser, {
-                displayName: name,
-                photoURL: photoURL,
-              })
-                .then((result) => {
-                  const user = result.user;
-                  const currentUser = {
-                    email: user.email,
-                  };
-                  fetch("http://localhost:5000/jwt", {
-                    method: "POST",
-                    headers: {
-                      "content-type": "application/json",
-                    },
-    
-                    body: JSON.stringify(currentUser),
-                  })
-                    .then((res) => res.json())
-                    .then((data) => {
-                      console.log(data);
-    
-                      localStorage.setItem("jwt-token", data.token);
-    
-                      navigate(from, { replace: true });
-                    });
-                  console.log(user);
-                })
-                .catch((error) => console.log(error));
-              navigate(from, { replace: true });
+        const profile = {
+            displayName: name, photoURL: photoURL
+        }
+        console.log(email, pass);
+        createUser(email, pass)
+            .then(result => {
+                form.reset();
+
+                toast.success('Successfully Registered');
+                handleUpdate(profile);
+                navigate('/');
+
             })
-            .catch((error) => console.log(error));
-       
-      };
+            .catch(error => {
+                console.log(error)
+            })
+    }
+    const handleUpdate = (profile) => {
+        updateUserProfile(profile)
+            .then(() => { })
+            .catch((error) => { console.log(error) })
+    }
+
     return (
         <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-lg">
@@ -70,7 +57,7 @@ const Enroll = () => {
                     Get started today
                 </h1>
 
-                <form onSubmit={handleSignUp} action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+                <form onSubmit={handleRegister} className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl" action="">
                     <p className="text-lg font-medium">Enroll now!!!</p>
 
                     <div>
@@ -79,14 +66,14 @@ const Enroll = () => {
                         <div className="relative mt-1">
                             <input
                                 type="text"
-                                id="email"
+
                                 name="name"
                                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                 placeholder="Enter Name"
                             />
 
                             <span className="absolute inset-y-0 right-4 inline-flex items-center">
-                          
+
                             </span>
                         </div>
                     </div>
@@ -96,15 +83,15 @@ const Enroll = () => {
                         <div className="relative mt-1">
                             <input
                                 type="text"
-                                id="email"
+
                                 name="photoURL"
                                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                 placeholder="Enter Photo URL"
                             />
 
                             <span className="absolute inset-y-0 right-4 inline-flex items-center">
-                            
-                                   
+
+
                             </span>
                         </div>
                     </div>
@@ -114,7 +101,8 @@ const Enroll = () => {
                         <div className="relative mt-1">
                             <input
                                 type="email"
-                                id="email"
+
+                                name="email"
                                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                 placeholder="Enter email"
                             />
@@ -144,7 +132,8 @@ const Enroll = () => {
                         <div className="relative mt-1">
                             <input
                                 type="password"
-                                id="password"
+
+                                name="pass"
                                 className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                 placeholder="Enter password"
                             />
@@ -173,20 +162,10 @@ const Enroll = () => {
                             </span>
                         </div>
                     </div>
-
-                    <button
-                        type="submit"
-                        className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
-                    >
-                        Enroll
-                    </button>
-
-                    <p className="text-center text-sm text-gray-500">
-                        Already have an account?
-                        <Link className="underline" to='/login'> Login</Link>
-                    </p>
+                    <button type="submit" className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">Enroll</button>
                 </form>
             </div>
+
         </div>
     );
 };

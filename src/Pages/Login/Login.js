@@ -8,7 +8,7 @@ import { FaGoogle } from 'react-icons/fa';
 
 const Login = () => {
     useTitle('Login')
-    const { googleSignIn, userSignIn } = useContext(AuthContext);
+    const { providerLogin, signIn } = useContext(AuthContext);
 
 
     const navigate = useNavigate();
@@ -21,10 +21,9 @@ const Login = () => {
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
-        userSignIn(email, password)
+        signIn(email, password)
             .then((result) => {
                 const user = result.user;
-
                 navigate(from, { replace: true });
                 console.log(user);
             })
@@ -32,28 +31,9 @@ const Login = () => {
     }
 
     const handleLoginGoogle = () => {
-        googleSignIn()
+        providerLogin()
             .then((result) => {
                 const user = result.user;
-                const currentUser = {
-                    email: user.email,
-                };
-                fetch("http://localhost:5000/jwt", {
-                    method: "POST",
-                    headers: {
-                        "content-type": "application/json",
-                    },
-
-                    body: JSON.stringify(currentUser),
-                })
-                    .then((res) => res.json())
-                    .then((data) => {
-                        console.log(data);
-
-                        localStorage.setItem("jwt-token", data.token);
-
-                        navigate(from, { replace: true });
-                    });
                 navigate(from, { replace: true });
                 console.log(user);
             })
