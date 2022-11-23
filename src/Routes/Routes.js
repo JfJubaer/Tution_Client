@@ -42,7 +42,7 @@ const router = createBrowserRouter(
                     path: '/details/:id',
                     element: <ServiceDetails></ServiceDetails>
                     ,
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-lyart.vercel.app/services/${params.id}`)
                 },
                 {
                     path: '/adservice',
@@ -55,7 +55,7 @@ const router = createBrowserRouter(
                 {
                     path: '/edit/:id',
                     element: <PrivateRoute><Edit></Edit></PrivateRoute>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/reviews/${params.id}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-lyart.vercel.app/myreviews/${params.id}`)
                 },
             ]
         }

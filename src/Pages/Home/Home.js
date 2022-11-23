@@ -11,7 +11,7 @@ const Home = () => {
     useTitle('Home');
     const [courses, setCourses] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/services`)
+        fetch(`https://a-11-server-lyart.vercel.app/services`)
             .then(res => res.json())
             .then(data => setCourses(data))
     }, [])
@@ -33,7 +33,7 @@ const Home = () => {
 
                 <div className='mx-auto'>
                     <Link to='/services'>
-                        <button type="button" class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
+                        <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
                             Show All
                         </button>
                     </Link>

@@ -7,15 +7,16 @@ const MyReviews = () => {
     useTitle("My Reviews");
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
+    console.log(reviews);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${user.email}`)
+        fetch(`https://a-11-server-lyart.vercel.app/reviews/${user.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user])
     return (
         <div>
             {reviews.length === 0 && <h2 className='p-10'>No reviews</h2>}
-            {reviews?.map((i, r) => <MyReview key={i} r={r}></MyReview>)}
+            {reviews?.map((r, i) => <MyReview key={i} r={r}></MyReview>)}
         </div>
     );
 };

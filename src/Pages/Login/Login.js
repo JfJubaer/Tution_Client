@@ -11,6 +11,7 @@ const Login = () => {
     const { providerLogin, signIn } = useContext(AuthContext);
 
 
+
     const navigate = useNavigate();
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
@@ -31,6 +32,7 @@ const Login = () => {
     }
 
     const handleLoginGoogle = () => {
+        console.log('hi')
         providerLogin()
             .then((result) => {
                 const user = result.user;
@@ -41,33 +43,33 @@ const Login = () => {
     }
     return (
 
-        <div class="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-            <div class="mx-auto max-w-lg">
-                <h1 class="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
+        <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
+            <div className="mx-auto max-w-lg">
+                <h1 className="text-center text-2xl font-bold text-indigo-600 sm:text-3xl">
                     Get started today
                 </h1>
 
 
 
-                <form onSubmit={handleEmailLogin} action="" class="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
-                    <p class="text-lg font-medium">Login to your account</p>
+                <form onSubmit={handleEmailLogin} action="" className="mt-6 mb-0 space-y-4 rounded-lg p-8 shadow-2xl">
+                    <p className="text-lg font-medium">Login to your account</p>
 
                     <div>
-                        <label for="email" class="text-sm font-medium">Email</label>
+                        <label for="email" className="text-sm font-medium">Email</label>
 
-                        <div class="relative mt-1">
+                        <div className="relative mt-1">
                             <input
                                 type="email"
                                 id="email"
                                 name="email"
-                                class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                 placeholder="Enter email"
                             />
 
-                            <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                            <span className="absolute inset-y-0 right-4 inline-flex items-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 text-gray-400"
+                                    className="h-5 w-5 text-gray-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -84,21 +86,21 @@ const Login = () => {
                     </div>
 
                     <div>
-                        <label for="password" class="text-sm font-medium">Password</label>
+                        <label for="password" className="text-sm font-medium">Password</label>
 
-                        <div class="relative mt-1">
+                        <div className="relative mt-1">
                             <input
                                 type="password"
                                 id="password"
                                 name="pass"
-                                class="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
+                                className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                 placeholder="Enter password"
                             />
 
-                            <span class="absolute inset-y-0 right-4 inline-flex items-center">
+                            <span className="absolute inset-y-0 right-4 inline-flex items-center">
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
-                                    class="h-5 w-5 text-gray-400"
+                                    className="h-5 w-5 text-gray-400"
                                     fill="none"
                                     viewBox="0 0 24 24"
                                     stroke="currentColor"
@@ -122,18 +124,18 @@ const Login = () => {
 
                     <button
                         type="submit"
-                        class="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
+                        className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white"
                     >
                         Login
                     </button>
 
-                    <p class="text-center text-sm text-gray-500">
+                    <p className="text-center text-sm text-gray-500">
                         No account?
-                        <Link class="underline" to="/enroll">Enroll</Link>
+                        <Link className="underline" to="/enroll">Enroll</Link>
                     </p>
                     <div className='flex justify-between'>
                     </div>
-                    <button onClick={handleLoginGoogle} class="w-full h-10 relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
+                    <button onClick={handleLoginGoogle} className="w-full h-10 relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         sign in with google  <FaGoogle />
                     </button>
                 </form>
