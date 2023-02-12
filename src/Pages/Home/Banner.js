@@ -10,7 +10,7 @@ const Banner = () => {
             >
                 <div className="mx-auto max-w-3xl text-center">
                     <h1
-                        className="bg-gradient-to-r from-green-500 via-blue-500 to-purple-700 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
+                        className="bg-gradient-to-r from-red-600 via-blue-500 to-purple-700 bg-clip-text text-3xl font-extrabold text-transparent sm:text-5xl"
                     >
                         “Opportunities don't happen,
 

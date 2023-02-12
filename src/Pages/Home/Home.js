@@ -5,6 +5,9 @@ import Bio from './Bio';
 import Success from './Success';
 import Service from '../Services/Service';
 import { Link } from 'react-router-dom';
+import Lottie from './Lottie';
+import GaurdiansReview from './GaurdiansReview';
+import Gaol from './Gaol';
 
 
 const Home = () => {
@@ -18,7 +21,7 @@ const Home = () => {
     return (
         <div >
             <Banner></Banner>
-            <div className='grid lg:grid-cols-3 container mx-auto gap-10 my-20'>
+            <div className='grid lg:grid-cols-3 container mx-auto gap-10 mt-20'>
                 {courses?.slice(0, 3).map((course, i) =>
                     <Service
                         course={course}
@@ -26,11 +29,8 @@ const Home = () => {
                     >
                     </Service>
                 )}
-
                 <br />
-
                 <br />
-
                 <div className='mx-auto'>
                     <Link to='/services'>
                         <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:ring-blue-300 font-medium rounded-lg text-sm px-5 py-2.5 mr-2 mb-2 dark:bg-blue-600 dark:hover:bg-blue-700 focus:outline-none dark:focus:ring-blue-800">
@@ -38,12 +38,12 @@ const Home = () => {
                         </button>
                     </Link>
                 </div>
-
-
-
             </div>
+            <Lottie></Lottie>
             <Success></Success>
             <Bio></Bio>
+            <GaurdiansReview></GaurdiansReview>
+            <Gaol></Gaol>
         </div>
     );
 };
