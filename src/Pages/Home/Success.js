@@ -16,7 +16,7 @@ const Success = () => {
         },
     ]
     return (
-        <section className="bg-gray-900 text-white">
+        <section className="bg-gray-600 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                 <div className="mx-auto max-w-lg text-center">
                     <h2 className="text-3xl font-bold sm:text-4xl">Our Successful Students : </h2>
@@ -30,7 +30,7 @@ const Success = () => {
                         students.map((st, i) =>
 
                             <div key={i}
-                                className="block rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
+                                className="block bg-gray-900 rounded-xl border border-gray-800 p-8 shadow-xl transition hover:border-pink-500/10 hover:shadow-pink-500/10"
 
                             >
                                 <svg
@@ -56,6 +56,9 @@ const Success = () => {
 
                                 <p className="mt-1 text-sm text-gray-300">
                                     {st.bio}
+                                </p>
+                                <p className="mt-1 text-sm text-gray-300">
+                                    Review : Lorem ipsum dolor sit amet consectetur, adipisicing elit. Eos similique earum, ducimus enim incidunt eaque libero laudantium doloremque velit illum.
                                 </p>
                             </div>
 

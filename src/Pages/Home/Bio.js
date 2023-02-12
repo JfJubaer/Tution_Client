@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 const Bio = () => {
     return (
-        <section className="bg-gray-900 text-white">
+        <section className="bg-gray-400 text-white">
             <div className="mx-auto max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
                 <div className="grid grid-cols-1 gap-8 lg:grid-cols-2 lg:gap-16">
                     <div
@@ -22,10 +22,11 @@ const Bio = () => {
                             Ratul Master
                         </h2>
 
-                        <p className="mt-4 text-gray-600">
+                        <p className="mt-4 text-white">
                             College : Notredam <br />
                             Varsity : Buet <br />
-                            Department : Cse
+                            Department : Cse <br />
+                            Teacher's Objective : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae totam esse autem ad ex ipsum facilis exercitationem repudiandae est placeat.
 
                         </p>
 
