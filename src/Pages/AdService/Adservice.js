@@ -24,7 +24,7 @@ const Adservice = () => {
 
         };
         console.log(Service);
-        fetch("https://a-11-server-lyart.vercel.app/services", {
+        fetch("http://localhost:5000/services", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

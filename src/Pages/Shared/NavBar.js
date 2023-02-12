@@ -1,5 +1,6 @@
 import React, { useContext, useState } from 'react';
 import toast from 'react-hot-toast';
+import { FaCartArrowDown } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 import img1 from '../../assets/images/depositphotos_63590137-stock-illustration-blue-book-logo-vector.jpg'
 import { AuthContext } from '../../Context/AuthProvider';
@@ -69,6 +70,7 @@ const NavBar = () => {
                         My Reviews
                       </Link>
                     </li>
+
                   </>}
 
                 <li>
@@ -79,6 +81,13 @@ const NavBar = () => {
                     Blog
                   </Link>
                 </li>
+                {
+                  user &&
+                  <li>
+                    <Link to={`/cart/:${user.email}`}>
+                      <FaCartArrowDown className='w-6' /></Link>
+                  </li>
+                }
               </ul>
             </nav>
           </div>
@@ -87,6 +96,11 @@ const NavBar = () => {
             {
               user ?
                 <>
+                  <div>
+                    <img className='w-10' src={user?.photoURL} title={user?.displayName} alt='' />
+
+                  </div>
+
                   <div>
                     <button
                       onClick={handleLogout}
@@ -228,11 +242,19 @@ const NavBar = () => {
                             Blog
                           </Link>
                         </li>
+                        {
+                          user &&
+                          <li>
+                            <Link to={`/cart/:${user.email}`}>
+                              <FaCartArrowDown className='w-6' /></Link>
+                          </li>
+                        }
                       </ul>
                       <br />
                       {
                         user ?
                           <>
+
                             <div>
                               <Link
                                 onClick={handleLogout}

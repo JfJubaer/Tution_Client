@@ -16,7 +16,7 @@ const Edit = () => {
             review: rvw,
         };
         console.log(Service);
-        fetch(`https://a-11-server-lyart.vercel.app/reviews/${_id}`, {
+        fetch(`http://localhost:5000/reviews/${_id}`, {
             method: "PATCH",
             headers: {
                 "content-type": "application/json",

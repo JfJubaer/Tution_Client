@@ -131,7 +131,7 @@ const Login = () => {
 
                     <p className="text-center text-sm text-gray-500">
                         No account?
-                        <Link className="underline" to="/enroll">Enroll</Link>
+                        <Link className="underline" to="/enroll"> Enroll</Link>
                     </p>
                     <div className='flex justify-between'>
                     </div>

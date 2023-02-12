@@ -1,4 +1,5 @@
 import React from 'react';
+import { FaPeopleCarry } from 'react-icons/fa';
 
 const GaurdiansReview = () => {
     return (
@@ -10,7 +11,7 @@ const GaurdiansReview = () => {
                 >
                     <summary className="flex items-center justify-between cursor-pointer">
                         <h2 className="text-lg font-medium text-gray-900">
-                            In Mr Alamgir's thought :
+                            <FaPeopleCarry /> In Mr Alamgir's thought :
                         </h2>
 
                         <span
@@ -32,10 +33,7 @@ const GaurdiansReview = () => {
                     </summary>
 
                     <p className="mt-4 leading-relaxed text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                        molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                        voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                        earum similique!
+                        Use our SIM card with your unlocked Android or iPhone and get free cell phone coverage on one of the nation’s largest wireless networks.
                     </p>
                 </details>
 
@@ -45,7 +43,7 @@ const GaurdiansReview = () => {
                 >
                     <summary className="flex items-center justify-between cursor-pointer">
                         <h2 className="text-lg font-medium text-gray-900">
-                            In Mr Jabed's thought :
+                            <FaPeopleCarry /> In Mr Jabed's thought :
                         </h2>
 
                         <span
@@ -67,10 +65,7 @@ const GaurdiansReview = () => {
                     </summary>
 
                     <p className="mt-4 leading-relaxed text-gray-700">
-                        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ab hic veritatis
-                        molestias culpa in, recusandae laboriosam neque aliquid libero nesciunt
-                        voluptate dicta quo officiis explicabo consequuntur distinctio corporis
-                        earum similique!
+                        Use our SIM card with your unlocked Android or iPhone and get free cell phone coverage on one of the nation’s largest wireless networks.
                     </p>
                 </details>
             </div>

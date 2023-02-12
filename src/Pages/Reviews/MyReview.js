@@ -5,20 +5,19 @@ import { Link } from 'react-router-dom';
 const MyReview = ({ r }) => {
     const { name, review, photo, _id } = r;
     function handleDelete() {
-        fetch(`https://a-11-server-lyart.vercel.app/reviews/${_id}`, {
+        fetch(`http://localhost:5000/reviews/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())
             .then((data) => {
                 if (data.deletedCount) {
                     toast.success("Review Deleted");
-
                 }
             });
     }
     return (
         <div>
-            <div className="m-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
+            <div className="lg:m-10 w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow-md dark:bg-gray-800 dark:border-gray-700">
                 <div className="flex justify-end px-4 pt-4">
 
 

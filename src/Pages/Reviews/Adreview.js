@@ -23,7 +23,7 @@ const Adreview = ({ title }) => {
         };
         console.log(Review);
 
-        fetch("https://a-11-server-lyart.vercel.app/reviews", {
+        fetch("http://localhost:5000/reviews", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

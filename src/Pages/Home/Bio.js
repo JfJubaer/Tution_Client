@@ -26,7 +26,7 @@ const Bio = () => {
                             College : Notredam <br />
                             Varsity : Buet <br />
                             Department : Cse <br />
-                            Teacher's Objective : Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae totam esse autem ad ex ipsum facilis exercitationem repudiandae est placeat.
+                            Teacher's Objective :  Use our SIM card with your unlocked Android or iPhone and get free cell phone coverage on one of the nation’s largest wireless networks. Stay connected anywhere in the U.S  without ever paying for a monthly phone bill.
 
                         </p>
 

@@ -4,16 +4,16 @@ import Review from './Review';
 
 
 
-const Reviews = () => {
+const Reviews = ({ title }) => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch(`https://a-11-server-lyart.vercel.app/reviews`)
+        fetch(`http://localhost:5000/reviews/${title}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)
 
             })
-    }, [])
+    }, [title])
 
     return (
         <div className='grid lg:grid-cols-3 gap-10'>

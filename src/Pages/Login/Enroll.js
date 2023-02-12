@@ -1,7 +1,7 @@
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import toast from "react-hot-toast";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Context/AuthProvider";
 
 import useTitle from "../../Title/useTitle";
@@ -14,10 +14,7 @@ const Enroll = () => {
 
     const { createUser, updateUserProfile, } = useContext(AuthContext);
     const navigate = useNavigate();
-
-
-
-
+    const [fireError, setFireError] = useState('');
     const handleRegister = (event) => {
         event.preventDefault();
         console.log('clk')
@@ -41,13 +38,13 @@ const Enroll = () => {
 
             })
             .catch(error => {
-                console.log(error)
+                setFireError(error.message)
             })
     }
     const handleUpdate = (profile) => {
         updateUserProfile(profile)
             .then(() => { })
-            .catch((error) => { console.log(error) })
+            .catch((error) => { })
     }
 
     return (
@@ -163,6 +160,11 @@ const Enroll = () => {
                         </div>
                     </div>
                     <button type="submit" className="block w-full rounded-lg bg-indigo-600 px-5 py-3 text-sm font-medium text-white">Enroll</button>
+                    <p className="text-center text-sm text-gray-500">
+                        Already have an account?
+                        <Link className="underline" to="/login"> Please Login</Link>
+                        <p className="text-red-500">{fireError}</p>
+                    </p>
                 </form>
             </div>
 

@@ -2,6 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Main from "../Layout/Main";
 import Adservice from "../Pages/AdService/Adservice";
 import Blogs from "../Pages/Blogs/Blogs";
+import Cart from "../Pages/Cart/Cart";
 import Home from "../Pages/Home/Home";
 import Enroll from "../Pages/Login/Enroll";
 import Login from "../Pages/Login/Login";
@@ -42,7 +43,7 @@ const router = createBrowserRouter(
                     path: '/details/:id',
                     element: <ServiceDetails></ServiceDetails>
                     ,
-                    loader: ({ params }) => fetch(`https://a-11-server-lyart.vercel.app/services/${params.id}`)
+                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
                 },
                 {
                     path: '/adservice',
@@ -55,7 +56,12 @@ const router = createBrowserRouter(
                 {
                     path: '/edit/:id',
                     element: <PrivateRoute><Edit></Edit></PrivateRoute>,
-                    loader: ({ params }) => fetch(`https://a-11-server-lyart.vercel.app/myreviews/${params.id}`)
+                    loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+                },
+                {
+                    path: '/cart/:user',
+                    element: <PrivateRoute><Cart></Cart></PrivateRoute>,
+                    // loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.user}`)
                 },
             ]
         }
