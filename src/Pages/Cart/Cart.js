@@ -1,11 +1,20 @@
 import React from 'react';
+import { toast } from 'react-hot-toast';
 import { useLoaderData } from 'react-router-dom';
 
 const Cart = () => {
 
     const items = useLoaderData();
     const prices = items.map(i => i.price);
+    console.log(prices);
     const total = prices.reduce(function (a, b) { return a + b; }, 0);
+    const handleDelete = (id) => {
+        fetch(`http://localhost:5000/cart/${id}`, {
+            method: 'delete'
+        })
+            .then(res => res.json())
+            .then(data => toast.success('item deleted'))
+    }
 
 
     return (
@@ -43,7 +52,7 @@ const Cart = () => {
                                 {item.price}
                             </td>
                             <td className="px-6 py-4 text-right">
-                                <button className="font-medium text-red-600 dark:text-blue-500 ">Delete</button>
+                                <button onClick={() => handleDelete(item._id)} className="font-medium text-red-600 dark:text-blue-500 ">Delete</button>
                             </td>
                         </tr>)}
 

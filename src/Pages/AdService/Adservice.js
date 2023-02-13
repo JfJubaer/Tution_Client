@@ -10,7 +10,8 @@ const Adservice = () => {
         event.preventDefault();
         const form = event.target;
         const name = form.name.value;
-        const price = form.price.value;
+        const priceSTR = form.price.value;
+        const price = priceSTR * 1;
         const info = form.info.value;
         const rate = form.rate.value;
         const pic = form.pic.value;
@@ -109,7 +110,7 @@ const Adservice = () => {
 
                             <div className="relative">
                                 <input
-                                    type="text"
+                                    type="number"
                                     name='price'
                                     className="w-full rounded-lg border-gray-200 p-4 pr-12 text-sm shadow-sm"
                                     placeholder="Enter price"

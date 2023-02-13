@@ -3,7 +3,7 @@ import "@lottiefiles/lottie-player";
 
 const Lottie = () => {
     return (
-        <div className='w-1/2 h-1/2 mx-auto mb-10'>
+        <div className='w-1/2 mx-auto mb-10' >
             <lottie-player
                 autoplay
                 loop
