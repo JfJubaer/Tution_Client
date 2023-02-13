@@ -6,7 +6,6 @@ const Cart = () => {
 
     const items = useLoaderData();
     const prices = items.map(i => i.price);
-    console.log(prices);
     const total = prices.reduce(function (a, b) { return a + b; }, 0);
     const handleDelete = (id) => {
         fetch(`http://localhost:5000/cart/${id}`, {

@@ -24,7 +24,6 @@ const Adservice = () => {
             price
 
         };
-        console.log(Service);
         fetch("http://localhost:5000/services", {
             method: "POST",
             headers: {
