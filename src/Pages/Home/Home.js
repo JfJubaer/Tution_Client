@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Lottie from './Lottie';
 import GaurdiansReview from './GaurdiansReview';
 import Gaol from './Gaol';
+import Blogg from './Blogg';
 
 
 const Home = () => {
@@ -44,6 +45,7 @@ const Home = () => {
             <Bio></Bio>
             <GaurdiansReview></GaurdiansReview>
             <Gaol></Gaol>
+            <Blogg></Blogg>
         </div>
     );
 };
