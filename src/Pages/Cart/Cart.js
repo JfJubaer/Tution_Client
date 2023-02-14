@@ -1,9 +1,10 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { toast } from 'react-hot-toast';
-import { useLoaderData } from 'react-router-dom';
+import { Link, useLoaderData } from 'react-router-dom';
+import { AuthContext } from '../../Context/AuthProvider';
 
 const Cart = () => {
-
+    const { user } = useContext(AuthContext);
     const items = useLoaderData();
     const prices = items.map(i => i.price);
     const total = prices.reduce(function (a, b) { return a + b; }, 0);
@@ -57,7 +58,13 @@ const Cart = () => {
 
                 </tbody>
             </table>
-            <p className='p-3 text-center text-xl'>total : {total} $</p>
+            <p className='p-3 text-center text-xl'>total : {total} $   <button className='class="inline-block rounded bg-gradient-to-r from-pink-400 via-red-400 to-red-700 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"'>
+                <Link to={`/payment/${user.email}`}>Proceed to pay</Link>
+            </button></p>
+
+
+
+
         </div>
 
     );

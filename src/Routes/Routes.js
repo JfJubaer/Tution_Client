@@ -3,6 +3,7 @@ import Main from "../Layout/Main";
 import Adservice from "../Pages/AdService/Adservice";
 import Blogs from "../Pages/Blogs/Blogs";
 import Cart from "../Pages/Cart/Cart";
+import Payment from "../Pages/Cart/Payment";
 import Home from "../Pages/Home/Home";
 import Enroll from "../Pages/Login/Enroll";
 import Login from "../Pages/Login/Login";
@@ -52,6 +53,11 @@ const router = createBrowserRouter(
                 {
                     path: '/myreviews',
                     element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
+                },
+                {
+                    path: '/payment/:id',
+                    element: <PrivateRoute><Payment></Payment></PrivateRoute>,
+                    loader: ({ params }) => fetch(`http://localhost:5000/cart/${params.user}`)
                 },
                 {
                     path: '/edit/:id',
