@@ -9,7 +9,7 @@ const Cart = () => {
     const prices = items.map(i => i.price);
     const total = prices.reduce(function (a, b) { return a + b; }, 0);
     const handleDelete = (id) => {
-        fetch(`http://localhost:5000/cart/${id}`, {
+        fetch(`https://a-11-server-jfjubaer.vercel.app/cart/${id}`, {
             method: 'delete'
         })
             .then(res => res.json())

@@ -24,7 +24,7 @@ const Adservice = () => {
             price
 
         };
-        fetch("http://localhost:5000/services", {
+        fetch("https://a-11-server-jfjubaer.vercel.app/services", {
             method: "POST",
             headers: {
                 "content-type": "application/json",

@@ -58,7 +58,7 @@ const Success = () => {
                                     {st.bio}
                                 </p>
                                 <p className="mt-1 text-sm text-gray-300">
-                                    Review :  Use our SIM card with your unlocked Android or iPhone and get free cell phone coverage on one of the nation’s largest wireless networks. Stay connected anywhere in the U.S  without ever paying for a monthly phone bill.
+                                    Review :  Some of the best online learning platforms include Coursera, Skillshare, Udemy, Codecademy, Edx, Pluralsight, Future Learn, and Moodle. Apart from online learning platforms, we also have online course platforms like LearnWorlds, Teachable, Thinkific, Kajabi, and Podia.
                                 </p>
                             </div>
 

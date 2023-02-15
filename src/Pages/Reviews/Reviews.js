@@ -7,7 +7,7 @@ import Review from './Review';
 const Reviews = ({ title }) => {
     const [reviews, setReviews] = useState([]);
     useEffect(() => {
-        fetch(`http://localhost:5000/reviews/${title}`)
+        fetch(`https://a-11-server-jfjubaer.vercel.app/reviews/${title}`)
             .then(res => res.json())
             .then(data => {
                 setReviews(data)

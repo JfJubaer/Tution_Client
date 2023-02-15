@@ -44,7 +44,7 @@ const router = createBrowserRouter(
                     path: '/details/:id',
                     element: <ServiceDetails></ServiceDetails>
                     ,
-                    loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/services/${params.id}`)
                 },
                 {
                     path: '/adservice',
@@ -57,17 +57,17 @@ const router = createBrowserRouter(
                 {
                     path: '/payment/:id',
                     element: <PrivateRoute><Payment></Payment></PrivateRoute>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/cart/${params.user}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/cart/${params.user}`)
                 },
                 {
                     path: '/edit/:id',
                     element: <PrivateRoute><Edit></Edit></PrivateRoute>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/myreviews/${params.id}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/myreviews/${params.id}`)
                 },
                 {
                     path: '/cart/:user',
                     element: <PrivateRoute><Cart></Cart></PrivateRoute>,
-                    loader: ({ params }) => fetch(`http://localhost:5000/cart/${params.user}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/cart/${params.user}`)
                 },
             ]
         }

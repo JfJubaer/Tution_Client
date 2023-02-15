@@ -9,8 +9,7 @@ const Blogg = () => {
                         <h1 class="text-2xl font-semibold text-gray-800 capitalize lg:text-3xl dark:text-white">Free tips for everyone</h1>
 
                         <p class="max-w-lg mx-auto mt-4 text-gray-500">
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt, laudantium
-                            quia tempore delect
+                            Your free trial grants access to some of our most popular courses for front-end, back-end, cloud computing, and security.
                         </p>
                     </div>
 
@@ -24,8 +23,7 @@ const Blogg = () => {
                                 </a>
 
                                 <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
-                                    laudantium quia tempore delect
+                                    Please note that our interview prep courses are excluded, but you can enjoy access to hundreds of other courses that are part of the Educative Standard subscription!
                                 </p>
 
                                 <p class="mt-3 text-sm text-blue-500">21 October 2019</p>
@@ -41,8 +39,7 @@ const Blogg = () => {
                                 </a>
 
                                 <p class="mt-3 text-sm text-gray-500 dark:text-gray-300 md:text-sm">
-                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Iure veritatis sint autem nesciunt,
-                                    laudantium quia tempore delect
+                                    Some of the best online learning platforms include Coursera, Skillshare, Udemy, Codecademy, Edx, Pluralsight, Future Learn, and Moodle. Apart from online learning platforms,
                                 </p>
 
                                 <p class="mt-3 text-sm text-blue-500">20 October 2019</p>

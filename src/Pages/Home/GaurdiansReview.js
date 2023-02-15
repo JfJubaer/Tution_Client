@@ -33,7 +33,7 @@ const GaurdiansReview = () => {
                     </summary>
 
                     <p className="mt-4 leading-relaxed text-gray-700">
-                        Use our SIM card with your unlocked Android or iPhone and get free cell phone coverage on one of the nation’s largest wireless networks.
+                        Some of the best online learning platforms include Coursera, Skillshare, Udemy, Codecademy, Edx, Pluralsight, Future Learn, and Moodle.
                     </p>
                 </details>
 
@@ -65,7 +65,7 @@ const GaurdiansReview = () => {
                     </summary>
 
                     <p className="mt-4 leading-relaxed text-gray-700">
-                        Use our SIM card with your unlocked Android or iPhone and get free cell phone coverage on one of the nation’s largest wireless networks.
+                        Some of the best online learning platforms include Coursera, Skillshare, Udemy, Codecademy, Edx, Pluralsight, Future Learn, and Moodle.
                     </p>
                 </details>
             </div>

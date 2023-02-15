@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const MyReview = ({ r }) => {
     const { name, review, photo, _id } = r;
     function handleDelete() {
-        fetch(`http://localhost:5000/reviews/${_id}`, {
+        fetch(`https://a-11-server-jfjubaer.vercel.app/reviews/${_id}`, {
             method: "DELETE",
         })
             .then((res) => res.json())

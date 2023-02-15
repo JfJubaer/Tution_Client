@@ -16,7 +16,7 @@ const Service = ({ course }) => {
             image,
             user: user.email
         }
-        fetch('http://localhost:5000/cart', {
+        fetch('https://a-11-server-jfjubaer.vercel.app/cart', {
             method: 'post',
             headers: { "content-type": "application/json" },
             body: JSON.stringify(item)
