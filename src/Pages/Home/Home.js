@@ -22,7 +22,8 @@ const Home = () => {
     return (
         <div >
             <Banner></Banner>
-            <div className='grid lg:grid-cols-3 container mx-auto gap-10 mt-20'>
+            <h2 className='text-5xl text-indigo-700 text-center mt-10 font-extrabold'>Explore our latest courses</h2>
+            <div className='grid lg:grid-cols-3 container mx-auto gap-10 mt-5'>
                 {courses?.slice(0, 3).map((course, i) =>
                     <Service
                         course={course}
@@ -43,6 +44,7 @@ const Home = () => {
             <Lottie></Lottie>
             <Success></Success>
             <Bio></Bio>
+            <h2 className='text-5xl text-indigo-700 text-center mt-10 font-extrabold'>See what our parents thoughts about us</h2>
             <GaurdiansReview></GaurdiansReview>
             <Gaol></Gaol>
             <Blogg></Blogg>

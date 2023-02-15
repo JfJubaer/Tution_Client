@@ -4,20 +4,20 @@ const Gaol = () => {
     return (
         <div>
             <section className="bg-gray-500 text-white">
-                <div className="max-w-screen-xl px-4 py-16 sm:px-6 lg:px-8">
-                    <div className="max-w-xl">
-                        <h2 className="text-3xl font-bold sm:text-4xl">What makes us special</h2>
+                <div className="max-w-screen-xl  mx-auto px-4 py-16 sm:px-6 lg:px-8">
+                    <div className="max-w-xl ">
+                        <h2 className="text-3xl  font-bold sm:text-4xl">What makes us special</h2>
 
-                        <p className="mt-4 text-gray-300">
+                        <p className="mt-4  mx-auto text-gray-300">
                             Some of the best online learning platforms include Coursera, Skillshare, Udemy, Codecademy, Edx, Pluralsight, Future Learn, and Moodle. Apart from online learning platforms, we also have online course platforms like LearnWorlds, Teachable, Thinkific, Kajabi, and Podia.
                         </p>
                     </div>
 
                     <div
-                        className="mt-8 grid grid-cols-1 gap-8 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3"
+                        className="mt-8 grid  grid-cols-1 gap-10 md:mt-16 md:grid-cols-2 md:gap-12 lg:grid-cols-3"
                     >
-                        <div className="flex items-start ">
-                            <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
+                        <div className="flex">
+                            <span className=" rounded-lg bg-gray-800 p-4">
                                 <svg
                                     className="h-5 w-5"
                                     fill="none"
@@ -47,7 +47,7 @@ const Gaol = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-start">
+                        <div className="flex">
                             <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
                                 <svg
                                     className="h-5 w-5"
@@ -78,7 +78,7 @@ const Gaol = () => {
                             </div>
                         </div>
 
-                        <div className="flex items-start">
+                        <div className="flex">
                             <span className="flex-shrink-0 rounded-lg bg-gray-800 p-4">
                                 <svg
                                     className="h-5 w-5"

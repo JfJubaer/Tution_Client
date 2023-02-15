@@ -18,17 +18,19 @@ const Services = () => {
     }
     return (
 
-        <div className='grid lg:grid-cols-3 container mx-auto gap-10 my-20'>
+        <>
 
-            {courses?.map((course, i) =>
-                <Service
-                    course={course}
-                    key={i}
-                >
-                </Service>
-            )}
+            <div className='grid lg:grid-cols-3 container mx-auto gap-10 my-20'>
 
-        </div>
+                {courses?.map((course, i) =>
+                    <Service
+                        course={course}
+                        key={i}
+                    >
+                    </Service>
+                )}
+
+            </div></>
 
     );
 };

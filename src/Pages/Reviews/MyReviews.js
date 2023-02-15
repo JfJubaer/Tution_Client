@@ -9,12 +9,12 @@ const MyReviews = () => {
     const [reviews, setReviews] = useState([]);
     console.log(reviews);
     useEffect(() => {
-        fetch(`https://a-11-server-jfjubaer.vercel.app/reviews/${user.email}`)
+        fetch(`https://a-11-server-jfjubaer.vercel.app/myreviews/${user.email}`)
             .then(res => res.json())
             .then(data => setReviews(data))
     }, [user])
     return (
-        <div>
+        <div className='grid lg:grid-cols-3'>
             {reviews.length === 0 && <h2 className='p-10'>No reviews</h2>}
             {reviews?.map((r, i) => <MyReview key={i} r={r}></MyReview>)}
         </div>

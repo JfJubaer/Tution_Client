@@ -3,11 +3,11 @@ import React from 'react';
 const Footer = () => {
     return (
 
-        <footer className="bg-white dark:bg-gray-900">
+        <footer className="bg-gray-700 text-white">
             <div className="grid grid-cols-2 gap-8 py-8 px-6 md:grid-cols-4">
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Company</h2>
-                    <ul className="text-gray-500 dark:text-gray-400">
+                    <ul >
                         <li className="mb-4">
                             <a href="#" className=" hover:underline">About</a>
                         </li>
@@ -24,7 +24,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Help center</h2>
-                    <ul className="text-gray-500 dark:text-gray-400">
+                    <ul >
                         <li className="mb-4">
                             <a href="#" className="hover:underline">Discord Server</a>
                         </li>
@@ -41,7 +41,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Legal</h2>
-                    <ul className="text-gray-500 dark:text-gray-400">
+                    <ul >
                         <li className="mb-4">
                             <a href="#" className="hover:underline">Privacy Policy</a>
                         </li>
@@ -55,7 +55,7 @@ const Footer = () => {
                 </div>
                 <div>
                     <h2 className="mb-6 text-sm font-semibold text-gray-500 uppercase dark:text-gray-400">Download</h2>
-                    <ul className="text-gray-500 dark:text-gray-400">
+                    <ul >
                         <li className="mb-4">
                             <a href="#" className="hover:underline">iOS</a>
                         </li>

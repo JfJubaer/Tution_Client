@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const Banner = () => {
 
     return (
-        <section className="bg-gray-400 text-white h-96">
+        <section className="bg-gray-800 text-white h-96">
             <div
                 className="mx-auto max-w-screen-xl px-4 py-32 lg:flex  lg:items-center"
             >

@@ -90,6 +90,7 @@ const ServiceDetails = () => {
                 </Link>
             }
             <br /><br />
+            <h2 className='text-5xl text-indigo-700 text-center mt-10 font-extrabold'>Our students Review</h2>
             <Reviews title={title}></Reviews>
 
         </div>
