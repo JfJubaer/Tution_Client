@@ -58,7 +58,7 @@ const Cart = () => {
 
                 </tbody>
             </table>
-            <p className='p-3 text-center text-xl'>total : {total} $   <button className='class="inline-block rounded bg-gradient-to-r from-pink-400 via-red-400 to-red-700 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"'>
+            <p className='p-3 text-center text-xl'>total : {total} $   <button className='className="inline-block rounded bg-gradient-to-r from-pink-400 via-red-400 to-red-700 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"'>
                 <Link to={`/payment/${user.email}`}>Proceed to pay</Link>
             </button></p>
 

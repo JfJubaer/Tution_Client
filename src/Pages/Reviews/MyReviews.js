@@ -7,7 +7,7 @@ const MyReviews = () => {
     useTitle("My Reviews");
     const { user } = useContext(AuthContext);
     const [reviews, setReviews] = useState([]);
-    console.log(reviews);
+    // console.log(reviews);
     useEffect(() => {
         fetch(`https://a-11-server-jfjubaer.vercel.app/myreviews/${user.email}`)
             .then(res => res.json())

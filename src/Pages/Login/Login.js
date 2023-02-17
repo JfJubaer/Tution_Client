@@ -1,5 +1,5 @@
 
-import React, { useContext } from 'react';
+import React, { useContext, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../Context/AuthProvider';
 import useTitle from '../../Title/useTitle';
@@ -9,7 +9,7 @@ import { FaGoogle } from 'react-icons/fa';
 const Login = () => {
     useTitle('Login')
     const { providerLogin, signIn } = useContext(AuthContext);
-
+    const [fireError, setFireError] = useState('');
 
 
     const navigate = useNavigate();
@@ -28,7 +28,8 @@ const Login = () => {
                 navigate(from, { replace: true });
                 console.log(user);
             })
-            .catch((error) => console.log(error));
+            .catch((error) =>
+                setFireError(error.message));
     }
 
     const handleLoginGoogle = () => {
@@ -75,9 +76,9 @@ const Login = () => {
                                     stroke="currentColor"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
                                         d="M16 12a4 4 0 10-8 0 4 4 0 008 0zm0 0v1.5a2.5 2.5 0 005 0V12a9 9 0 10-9 9m4.5-1.206a8.959 8.959 0 01-4.5 1.207"
                                     />
                                 </svg>
@@ -106,15 +107,15 @@ const Login = () => {
                                     stroke="currentColor"
                                 >
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
                                         d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"
                                     />
                                     <path
-                                        stroke-linecap="round"
-                                        stroke-linejoin="round"
-                                        stroke-width="2"
+                                        strokeLinecap="round"
+                                        strokeLinejoin="round"
+                                        strokeWidth="2"
                                         d="M2.458 12C3.732 7.943 7.523 5 12 5c4.478 0 8.268 2.943 9.542 7-1.274 4.057-5.064 7-9.542 7-4.477 0-8.268-2.943-9.542-7z"
                                     />
                                 </svg>
@@ -138,6 +139,11 @@ const Login = () => {
                     <button onClick={handleLoginGoogle} className="w-full h-10 relative inline-flex items-center justify-center p-0.5 mb-2 mr-2 overflow-hidden text-sm font-medium text-gray-900 rounded-lg group bg-gradient-to-br from-purple-600 to-blue-500 group-hover:from-purple-600 group-hover:to-blue-500 hover:text-white dark:text-white focus:ring-4 focus:outline-none focus:ring-blue-300 dark:focus:ring-blue-800">
                         sign in with google  <FaGoogle />
                     </button>
+                    <p className="text-center text-sm text-gray-500">
+                        Already have an account?
+                        <Link className="underline" to="/login"> Please Login</Link>
+                        <p className="text-red-500">{fireError}</p>
+                    </p>
                 </form>
 
             </div>

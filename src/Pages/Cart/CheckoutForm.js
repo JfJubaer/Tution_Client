@@ -108,7 +108,7 @@ const CheckoutForm = ({ total }) => {
                         },
                     }}
                 />
-                <button className='mt-5 p-2 class="inline-block rounded bg-gradient-to-r from-pink-400 via-red-400 to-red-700  hover:text-white focus:outline-none focus:ring active:text-opacity-75' type="submit" disabled={!stripe || processing}>
+                <button className='mt-5 p-2 className="inline-block rounded bg-gradient-to-r from-pink-400 via-red-400 to-red-700  hover:text-white focus:outline-none focus:ring active:text-opacity-75' type="submit" disabled={!stripe || processing}>
                     Click to Pay
                 </button>
             </form>
