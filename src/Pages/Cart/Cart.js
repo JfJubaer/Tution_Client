@@ -1,10 +1,13 @@
-import React, { useContext } from 'react';
+import { Elements } from '@stripe/react-stripe-js';
+import { loadStripe } from '@stripe/stripe-js';
+import React from 'react';
 import { toast } from 'react-hot-toast';
-import { Link, useLoaderData } from 'react-router-dom';
-import { AuthContext } from '../../Context/AuthProvider';
+import { useLoaderData } from 'react-router-dom';
+import CheckoutForm from './CheckoutForm';
+
+const stripePromise = loadStripe('pk_test_51MbPCuFJhUO1VhGGmIibaulG90q14OORD9zroa3X5HInVuv9Am8LuNiaGsoxx2qfCypWShiozicwK6PWTrznwc1j00MmxoTqf0');
 
 const Cart = () => {
-    const { user } = useContext(AuthContext);
     const items = useLoaderData();
     const prices = items.map(i => i.price);
     const total = prices.reduce(function (a, b) { return a + b; }, 0);
@@ -16,10 +19,13 @@ const Cart = () => {
             .then(data => toast.success('item deleted'))
     }
 
-
+    if (total === 0) {
+        return <div>
+            <h2 className='text-2xl text-center text-red-500 my-20'>Nothing here buy some courses</h2>
+        </div>
+    }
     return (
-
-        <div className="relative my-20 overflow-x-auto shadow-md sm:rounded-lg">
+        <div className="relative lg:container mx-auto my-20 overflow-x-auto shadow-md sm:rounded-lg">
             <table className="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                 <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                     <tr>
@@ -29,7 +35,6 @@ const Cart = () => {
                         <th scope="col" className="px-6 py-3">
                             Image
                         </th>
-
                         <th scope="col" className="px-6 py-3">
                             Price
                         </th>
@@ -55,18 +60,16 @@ const Cart = () => {
                                 <button onClick={() => handleDelete(item._id)} className="font-medium text-red-600 dark:text-blue-500 ">Delete</button>
                             </td>
                         </tr>)}
-
                 </tbody>
             </table>
-            <p className='p-3 text-center text-xl'>total : {total} $   <button className='className="inline-block rounded bg-gradient-to-r from-pink-400 via-red-400 to-red-700 p-[2px] hover:text-white focus:outline-none focus:ring active:text-opacity-75"'>
-                <Link to={`/payment/${user.email}`}>Proceed to pay</Link>
-            </button></p>
-
-
-
-
+            <p className='p-3 text-center text-xl'>total : {total} $   </p>
+            <div className='lg:px-5 text-center'>
+                <h2 className='text-2xl text-red-500 my-3'>Pay here</h2>
+                <Elements stripe={stripePromise}>
+                    <CheckoutForm total={total} />
+                </Elements>
+            </div>
         </div>
-
     );
 };
 

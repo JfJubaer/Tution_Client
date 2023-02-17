@@ -3,7 +3,6 @@ import Main from "../Layout/Main";
 import Adservice from "../Pages/AdService/Adservice";
 import Blogs from "../Pages/Blogs/Blogs";
 import Cart from "../Pages/Cart/Cart";
-import Payment from "../Pages/Cart/Payment";
 import Home from "../Pages/Home/Home";
 import Enroll from "../Pages/Login/Enroll";
 import Login from "../Pages/Login/Login";
@@ -55,14 +54,9 @@ const router = createBrowserRouter(
                     element: <PrivateRoute><MyReviews></MyReviews></PrivateRoute>
                 },
                 {
-                    path: '/payment/:id',
-                    element: <PrivateRoute><Payment></Payment></PrivateRoute>,
-                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/cart/${params.user}`)
-                },
-                {
                     path: '/edit/:id',
                     element: <PrivateRoute><Edit></Edit></PrivateRoute>,
-                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/myreviews/${params.id}`)
+                    loader: ({ params }) => fetch(`https://a-11-server-jfjubaer.vercel.app/myreview/${params.id}`)
                 },
                 {
                     path: '/cart/:user',

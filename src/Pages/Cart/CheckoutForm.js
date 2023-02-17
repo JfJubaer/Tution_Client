@@ -24,7 +24,6 @@ const CheckoutForm = ({ total }) => {
             );
     }, [total]);
 
-
     const handleSubmit = async (event) => {
         event.preventDefault();
         if (!stripe || !elements) {
