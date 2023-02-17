@@ -83,7 +83,7 @@ const NavBar = () => {
                 {
                   user &&
                   <li>
-                    <Link to={`/cart/:${user.email}`}>
+                    <Link to={`/cart/${user.email}`}>
                       <FaCartArrowDown className='w-6' /></Link>
                   </li>
                 }
