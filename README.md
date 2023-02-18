@@ -14,6 +14,10 @@ Technologies :
 
 React, Mongo, Node JS, Express, Tailwind, , Firebase, JWT, VS code, Github, Vercel, Firebase, Stripe
 
+live site : 
+
+https://tuition-point-79f72.web.app/
+
 
 
 # Getting Started with Create React App
