@@ -1,12 +1,17 @@
  TUTION_POINT  – LEARNING PLATFORM  
  
  key features : 
+ 
 •	learn on basic courses of updated syllabus
+
 •	Teacher can add or remove new course
+
 •	Give review of different courses
+
 •	Payment
 
-Technologies :  
+Technologies :
+
 React, Mongo, Node JS, Express, Tailwind, , Firebase, JWT, VS code, Github, Vercel, Firebase, Stripe
 
 
