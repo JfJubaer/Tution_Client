@@ -21,7 +21,7 @@ const Cart = () => {
 
     if (total === 0) {
         return <div>
-            <h2 className='text-2xl text-center text-red-500 my-20'>Nothing here buy some courses</h2>
+            <h2 className='text-5xl text-center text-red-500 my-20'>Nothing here buy some courses</h2>
         </div>
     }
     return (
@@ -64,7 +64,7 @@ const Cart = () => {
             </table>
             <p className='p-3 text-center text-xl'>total : {total} $   </p>
             <div className='lg:px-5 text-center'>
-                <h2 className='text-2xl text-red-500 my-3'>Pay here</h2>
+                <h2 className='text-5xl text-red-500 my-10'>Pay here</h2>
                 <Elements stripe={stripePromise}>
                     <CheckoutForm total={total} />
                 </Elements>

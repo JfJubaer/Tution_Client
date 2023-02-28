@@ -15,7 +15,7 @@ const MyReviews = () => {
     }, [user])
     return (
         <div className='grid lg:grid-cols-3'>
-            {reviews.length === 0 && <h2 className='p-10'>No reviews</h2>}
+            {reviews.length === 0 && <h2 className='p-20 text-center text-5xl text-red-400'>No reviews</h2>}
             {reviews?.map((r, i) => <MyReview key={i} r={r}></MyReview>)}
         </div>
     );

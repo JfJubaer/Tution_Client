@@ -8,6 +8,7 @@ import { Link } from 'react-router-dom';
 import Lottie from './Lottie';
 import GaurdiansReview from './GaurdiansReview';
 import Gaol from './Gaol';
+import Blogg from './Blogg';
 
 
 
@@ -47,6 +48,7 @@ const Home = () => {
             <h2 className='text-5xl text-indigo-700 text-center mt-10 font-extrabold'>See what our parents thoughts about us</h2>
             <GaurdiansReview></GaurdiansReview>
             <Gaol></Gaol>
+            <Blogg></Blogg>
 
         </div>
     );

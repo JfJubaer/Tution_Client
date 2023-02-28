@@ -24,9 +24,9 @@ const Login = () => {
         const password = form.password.value;
         signIn(email, password)
             .then((result) => {
-                const user = result.user;
+                // const user = result.user;
                 navigate(from, { replace: true });
-                console.log(user);
+                // console.log(user);
             })
             .catch((error) =>
                 setFireError(error.message));
