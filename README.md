@@ -1,3 +1,25 @@
+ TUTION_POINT  – LEARNING PLATFORM  
+ 
+ key features : 
+ 
+•	learn on basic courses of updated syllabus
+
+•	Teacher can add or remove new course
+
+•	Give review of different courses
+
+•	Payment
+
+Technologies :
+
+React, Mongo, Node JS, Express, Tailwind, , Firebase, JWT, VS code, Github, Vercel, Firebase, Stripe
+
+live site : 
+
+https://tuition-point-79f72.web.app/
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
